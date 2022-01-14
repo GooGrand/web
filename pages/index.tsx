@@ -38,42 +38,6 @@ export default function Web()
     
             banner={[
               textLine({ words: [textWord({ characters: Messages.banner })] }),
-              commandLine({
-                words: [
-                  commandWord({ characters: 'command word', prompt: '>' }),
-                  textWord({ characters: ' - command line with command' }),
-                ],
-              }),
-              textLine({
-                className: classes.customLine,
-                words: [textWord({ characters: 'custom text lines:' })],
-              }),
-              textLine({
-                className: classes.customWord,
-                words: [textWord({ className: classes.customWord, characters: 'custom text word' })],
-              }),
-              textLine({
-                className: classes.customLine,
-                words: [
-                  anchorWord({
-                    characters: 'anchor word',
-                    href: 'https://github.com/essserrr/crt-terminal/',
-                  }),
-                ],
-              }),
-              textLine({
-                className: classes.customLine,
-                words: [
-                  buttonWord({
-                    characters: 'button word',
-                    onClick: () => alert('You clicked a button'),
-                  }),
-                ],
-              }),
-              textLine({
-                className: classes.customLine,
-                words: [commandWord({ characters: 'command word', prompt: '>' })],
-              }),
             ]}
           />
         </main>
