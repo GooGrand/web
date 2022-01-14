@@ -15,7 +15,9 @@ To add new command in parser:
     {
         return 'You asked for help, but no one care.'
     }
+```
     OR
+```
     if(Command Messages.Help[0])
     {
         return Messages.Help[1];
