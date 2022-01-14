@@ -24,7 +24,9 @@ const Messages =
         >switch - switch chain to test fantom
         >balance gton | staking - get actual erc20 token balance
         >add gton | sgton - add tokens to metamask
-        >faucet - receive gton airdrop`
+        >faucet - receive gton airdrop
+        >ls - get all paths
+        `
     ],
 
     Join:
