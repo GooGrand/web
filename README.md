@@ -20,7 +20,7 @@ To add new command in parser:
 OR
 
 ```
-    if(Command Messages.Help[0])
+    if(Command == Messages.Help[0])
     {
         return Messages.Help[1];
     }
