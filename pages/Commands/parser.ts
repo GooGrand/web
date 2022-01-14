@@ -12,6 +12,10 @@ var CurrentPath = 'gton';
 
 export async function Parse(Command)
 {
+    if(Command == Messages.ls[0])
+    {
+        return Messages.ls[1];
+    }
     if(CurrentPath == 'gton')
     {
         if(Command == Messages.Help[0])
