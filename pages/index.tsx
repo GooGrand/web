@@ -12,30 +12,8 @@ import {
 import Layout from '../components/Layout/Layout';
 import classes from './index.module.scss';
 
-const banner = `
-Long multiline:
-
-The quick brown fox jumps over the lazy dog
-
-Very long word:
-foooooooooooooooooooooooooooooooooooooooooo
-`;
-
-function Test(eventQueue, command)
-{
-  const { lock, loading, clear, print, focus } = eventQueue.handlers;
-  print([
-    textLine({
-      className: classes.customLine,
-      words: [
-        anchorWord({
-          characters: command,
-          href: 'https://github.com/essserrr/crt-terminal/',
-        }),
-      ],
-    }),
-  ])
-}
+import Parse from './Parser/GTONCapitalProjects/GTONCapitalRouter'
+import messages from './Messages/Messages';
 
 export default function Web() {
 
@@ -49,47 +27,11 @@ export default function Web() {
           queue={eventQueue}
           onCommand={(command) =>
           {
-            Test(eventQueue, command);
+            Parse(eventQueue, command);
           }
         }
           banner={[
-            textLine({ words: [textWord({ characters: banner })] }),
-            commandLine({
-              words: [
-                commandWord({ characters: 'command word', prompt: '>' }),
-                textWord({ characters: ' - command line with command' }),
-              ],
-            }),
-            textLine({
-              className: classes.customLine,
-              words: [textWord({ characters: 'custom text lines:' })],
-            }),
-            textLine({
-              className: classes.customWord,
-              words: [textWord({ className: classes.customWord, characters: 'custom text word' })],
-            }),
-            textLine({
-              className: classes.customLine,
-              words: [
-                anchorWord({
-                  characters: 'anchor word',
-                  href: 'https://github.com/essserrr/crt-terminal/',
-                }),
-              ],
-            }),
-            textLine({
-              className: classes.customLine,
-              words: [
-                buttonWord({
-                  characters: 'button word',
-                  onClick: () => alert('You clicked a button'),
-                }),
-              ],
-            }),
-            textLine({
-              className: classes.customLine,
-              words: [commandWord({ characters: 'command word', prompt: '>' })],
-            }),
+            textLine({ words: [textWord({ characters: messages.banner })] }),
           ]}
         />
       </main>
