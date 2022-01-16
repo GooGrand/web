@@ -12,8 +12,17 @@ import {
 import Layout from '../components/Layout/Layout';
 import classes from './index.module.scss';
 
-import Parse from './Parser/GTONCapitalProjects/GTONCapitalRouter'
+import GTONParser from './Parser/GTONCapitalProjects/GTONCapitalRouter';
 import messages from './Messages/Messages';
+
+const Projects =
+{
+  "gton": "gton", 
+  "candyshop": "candyshop", 
+  "ogswap": "ogswap"
+}
+
+var CurrentDirectory = Projects.gton;
 
 export default function Web() {
 
@@ -27,7 +36,42 @@ export default function Web() {
           queue={eventQueue}
           onCommand={(command) =>
           {
-            Parse(eventQueue, command);
+            if(command.split(' ')[0] == "cd")
+            {
+              switch(command.split(' ')[1])
+              {
+                case "gton":
+                  CurrentDirectory = Projects.gton;
+                  print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.gton })]})]);
+                  break;
+                case "candyshop":
+                  CurrentDirectory = Projects.candyshop;
+                  print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.candyshop })]})]);
+                  break;
+                case "ogswap":
+                  CurrentDirectory = Projects.ogswap;
+                  print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.ogswap })]})]);
+                  break;
+              }
+              return;
+            }
+
+            switch(CurrentDirectory)
+            {
+              case Projects.gton:
+                GTONParser(eventQueue, command);
+                break;
+              case Projects.candyshop:
+                // import CandyParser from './Parser/CandyShop/CandyShopParser'
+                break;
+              case Projects.ogswap:
+                // import OGSwapParser from './Parser/OGSwap/OGSwapParser'
+                break;
+              default:
+                print([textLine({words:[textWord({ characters: "Error: please refresh page" })]})]);
+                break;
+            }
+
           }
         }
           banner={[
