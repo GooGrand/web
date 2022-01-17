@@ -1,33 +1,17 @@
 import React from 'react';
 import {
-  Terminal,
-  useEventQueue,
   textLine,
-  commandLine,
   textWord,
-  anchorWord,
-  buttonWord,
-  commandWord,
 } from 'crt-terminal';
 import messages from '../../Messages/Messages';
-import notFoundStrings from '../../Errors/notfound-strings';
-import classes from '../../index.module.scss'
 
 import { stake, unstake } from './WEB3/Stake';
 import connectMetamask from './WEB3/ConnectMetamask';
 import switchChain from './WEB3/Switch';
 import balance from './WEB3/Balance';
-import fromWei from './WEB3/Balance'
-import { tokenAddress } from './WEB3/config';
-import { stakingAddress } from '../../Messages/config';
-import { Value } from 'sass';
 import addToken from './WEB3/addTokenToMM';
 import tokenMap from './WEB3/API/addToken';
 import faucet from './WEB3/Faucet';
-
-function getRandomInt(max) {
-  return Math.floor(Math.random() * max);
-}
 
 // Func Router 
 
