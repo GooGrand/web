@@ -3027,6 +3027,11 @@
   "resolved" "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
   "version" "1.2.0"
 
+"help@^3.0.2":
+  "integrity" "sha1-luGQ1KCkU7icLLSwWrOOOo+f2t0="
+  "resolved" "https://registry.npmjs.org/help/-/help-3.0.2.tgz"
+  "version" "3.0.2"
+
 "hmac-drbg@^1.0.1":
   "integrity" "sha1-0nRXAQJabHdabFRXk+1QL8DGSaE="
   "resolved" "https://registry.npmjs.org/hmac-drbg/-/hmac-drbg-1.0.1.tgz"
