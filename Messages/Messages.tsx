@@ -1,6 +1,6 @@
 import { anchorWord, textLine, textWord } from 'crt-terminal';
 import { network } from './config';
-import classes from '.././index.module.scss'
+import classes from '../pages/./index.module.scss'
 
 enum Commands 
 {

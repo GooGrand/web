@@ -1,6 +1,6 @@
 declare var window: any;
 import { TerminalError } from '../../../Errors/ErrorCodes';
-import { fantomTestnet } from '../../../Messages/config';
+import { fantomTestnet } from './config';
 
 const switchChain = async (): Promise<void> => {
   if (!window.ethereum || !window.ethereum!.isMetaMask) {

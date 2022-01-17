@@ -1727,7 +1727,8 @@
     "which" "^2.0.1"
 
 "crt-terminal@^1.0.0":
-  "resolved" "git+ssh://git@github.com/essserrr/crt-terminal.git#a6f243cddb01acab78bd825c714f53f4987bfe90"
+  "integrity" "sha512-oKsjzbKQ+oHfmxc5b3OzlM5yNGCpznlfZR3rrSSdUTbrMGDKyR/h+jmrPAtwKFCRaal1T2oH4+WAhwNt6goibA=="
+  "resolved" "https://registry.npmjs.org/crt-terminal/-/crt-terminal-1.0.0.tgz"
   "version" "1.0.0"
 
 "crypto-browserify@3.12.0":
@@ -5488,6 +5489,11 @@
   "version" "3.21.0"
   dependencies:
     "tslib" "^1.8.1"
+
+"tsx@^1.0.0":
+  "integrity" "sha1-+LUVg1yv8JgXLHIyuysTML5EkmU="
+  "resolved" "https://registry.npmjs.org/tsx/-/tsx-1.0.0.tgz"
+  "version" "1.0.0"
 
 "tty-browserify@0.0.1":
   "integrity" "sha512-C3TaO7K81YvjCgQH9Q1S3R3P3BtN3RIM8n+OvX4il1K1zgE8ZhI0op7kClgkxtutIE8hQrcrHBXvIheqKUUCxw=="

@@ -12,8 +12,8 @@ import {
 import Layout from '../components/Layout/Layout';
 import classes from './index.module.scss';
 
-import GTONParser from './Parser/GTONCapitalProjects/GTONCapitalRouter';
-import messages from './Messages/Messages';
+import GTONParser from '../Parser/GTONCapitalProjects/GTONCapitalRouter';
+import messages from '../Messages/Messages';
 
 const Projects =
 {
