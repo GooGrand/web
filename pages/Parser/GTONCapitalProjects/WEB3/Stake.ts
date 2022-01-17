@@ -7,8 +7,9 @@ import {
 import { ethers } from 'ethers';
 import STAKING_ABI from './abi/staking.json';
 import { EventQueue } from 'crt-terminal';
-import { fromWei, toWei } from './API/balance';
+import web3 from 'web3';
 import BigNumber from 'bignumber.js';
+import { migrateBigNumber } from './API/balance';
 
 export const stake = async (amount: string): Promise<string> => {
   if (!window.ethereum || !window.ethereum!.isMetaMask) {
@@ -22,12 +23,12 @@ export const stake = async (amount: string): Promise<string> => {
     throw new TerminalError({ code: 'METAMASK_WRONG_NETWORK' });
   }
 
-  const Amount = toWei(new BigNumber(amount));
+  const Amount = web3.utils.toWei(amount);
 
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const signer = provider.getSigner();
   const contract = new ethers.Contract(stakingAddress, STAKING_ABI, signer);
-  const tx = await contract.mint(toWei(Amount), await signer.getAddress());
+  const tx = await contract.mint(Amount, await signer.getAddress());
   const receipt = await tx.wait();
   return receipt.transactionHash;
 };
@@ -43,10 +44,13 @@ export const unstake = async (amount: string): Promise<string> => {
   if (chainId !== network) {
     throw new TerminalError({ code: 'METAMASK_WRONG_NETWORK' });
   }
+
+  const Amount = web3.utils.toWei(amount);
+
   const provider = new ethers.providers.Web3Provider(window.ethereum);
   const signer = provider.getSigner();
   const contract = new ethers.Contract(stakingAddress, STAKING_ABI, signer);
-  const share = await contract.balanceToShare(amount);
+  const share = await contract.balanceToShare(Amount);
   const tx = await contract.burn(await signer.getAddress(), share);
   const receipt = await tx.wait();
   return receipt.transactionHash;
