@@ -12,3 +12,24 @@ body {
 * {
   box-sizing: border-box;
 }
+.index_mainContainer__DkU7y {
+  width: 96vw !important;
+  max-width: 96vw !important;
+  height: 92vh !important;
+  margin-bottom: 300px !important;
+  max-height: 92vh !important;
+}
+.text-effects-module_textEffects__OWNjV {
+  animation: none !important;
+}
+
+.terminal-module_terminal__4qfYI {
+  color: #FFFF00 !important;
+  background: #FF8C00 ;
+  background: radial-gradient(50% 50% at 50% 50%, #FF8C00 0, #cd5700 100%) !important;
+  line-height: 1.25 !important;
+  font-size: 1.25rem !important;
+  font-weight: 600;
+  text-shadow: none !important;
+
+}

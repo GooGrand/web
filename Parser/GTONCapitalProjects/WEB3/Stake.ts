@@ -1,15 +1,13 @@
-declare var window: any;
+import web3 from 'web3';
+import { ethers } from 'ethers';
+import STAKING_ABI from './abi/staking.json';
 import { TerminalError } from '../../../Errors/ErrorCodes';
 import {
   stakingAddress,
   network,
 } from './config';
-import { ethers } from 'ethers';
-import STAKING_ABI from './abi/staking.json';
-import { EventQueue } from 'crt-terminal';
-import web3 from 'web3';
-import BigNumber from 'bignumber.js';
-import { migrateBigNumber } from './API/balance';
+
+declare const window: any;
 
 export const stake = async (amount: string): Promise<string> => {
   if (!window.ethereum || !window.ethereum!.isMetaMask) {
