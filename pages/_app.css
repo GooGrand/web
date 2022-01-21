@@ -26,7 +26,7 @@ body {
 .terminal-module_terminal__4qfYI {
   color: #FFFF00 !important;
   background: #FF8C00 ;
-  background: radial-gradient(50% 50% at 50% 50%, #FF8C00 0, #cd5700 100%) !important;
+  background: rgb(255,140,0, 0.68) !important;
   line-height: 1.25 !important;
   font-size: 1.25rem !important;
   font-weight: 600;

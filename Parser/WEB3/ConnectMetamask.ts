@@ -1,7 +1,8 @@
-declare var window: any;
 import { utils } from 'ethers';
-import { TerminalError } from '../../../Errors/ErrorCodes';
-import { network } from './config';
+import { TerminalError } from '../../Errors/ErrorCodes';
+import { network } from '../../config/config';
+
+declare const window: any;
 
 const { isAddress, getAddress } = utils;
 

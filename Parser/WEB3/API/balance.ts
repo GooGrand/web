@@ -1,6 +1,6 @@
 import { BigNumber } from 'bignumber.js';
 import { BigNumber as OldBigNumber } from 'ethers';
-import { tokenAddress, stakingAddress } from '../config';
+import { tokenAddress, stakingAddress } from '../../../config/config';
 
 export const addressMap: Record<string, string> = {
   gton: tokenAddress,

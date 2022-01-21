@@ -3,11 +3,7 @@ import {
   Terminal,
   useEventQueue,
   textLine,
-  commandLine,
   textWord,
-  anchorWord,
-  buttonWord,
-  commandWord,
 } from 'crt-terminal';
 import Layout from '../components/Layout/Layout';
 import classes from './index.module.scss';
@@ -17,12 +13,12 @@ import messages from '../Messages/Messages';
 
 const Projects =
 {
-  "gton": "gton", 
+  "staking": "staking", 
   "candyshop": "candyshop", 
   "ogswap": "ogswap"
 }
 
-var CurrentDirectory = Projects.gton;
+var CurrentDirectory = Projects.staking;
 
 export default function Web() {
 
@@ -40,17 +36,20 @@ export default function Web() {
             {
               switch(command.split(' ')[1])
               {
-                case "gton":
-                  CurrentDirectory = Projects.gton;
-                  print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.gton })]})]);
+                case "staking":
+                  CurrentDirectory = Projects.staking;
+                  print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.staking })]})]);
                   break;
                 case "candyshop":
-                  CurrentDirectory = Projects.candyshop;
-                  print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.candyshop })]})]);
+                  // CurrentDirectory = Projects.candyshop;
+                  // print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.candyshop })]})]);
+                  print([textLine({words:[textWord({ characters: "Project is coming soon " })]})]);
+
                   break;
                 case "ogswap":
-                  CurrentDirectory = Projects.ogswap;
-                  print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.ogswap })]})]);
+                  // CurrentDirectory = Projects.ogswap;
+                  // print([textLine({words:[textWord({ characters: "Succefully switched to " + Projects.ogswap })]})]);
+                  print([textLine({words:[textWord({ characters: "Project is coming soon " })]})]);
                   break;
               }
               return;
@@ -58,7 +57,7 @@ export default function Web() {
 
             switch(CurrentDirectory)
             {
-              case Projects.gton:
+              case Projects.staking:
                 GTONParser(eventQueue, command);
                 break;
               case Projects.candyshop:
@@ -74,6 +73,7 @@ export default function Web() {
 
           }
         }
+        prompt={"$ "+CurrentDirectory+"/ "}
           banner={[
             textLine({ words: [textWord({ characters: messages.banner })] }),
           ]}

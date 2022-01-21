@@ -1,12 +1,13 @@
-declare var window: any;
-import { TerminalError } from '../../../Errors/ErrorCodes';
-import {
-  network,
-} from './config';
 import { BigNumber as OldBigNumber, ethers } from 'ethers';
 import BigNumber from 'bignumber.js';
-import ERC20_ABI from './abi/erc20.json';
+import { TerminalError } from '../../Errors/ErrorCodes';
+import {
+  network,
+} from '../../config/config';
+import ERC20_ABI from './ABI/erc20.json';
 import { migrateBigNumber } from './API/balance';
+
+declare const window: any;
 
 const balance = async (tokenAddress: string): Promise<BigNumber> => {
   if (!window.ethereum || !window.ethereum!.isMetaMask) {

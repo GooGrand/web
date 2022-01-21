@@ -1,12 +1,13 @@
-declare var window: any;
-import { TerminalError } from '../../../Errors/ErrorCodes';
+import { ethers } from 'ethers';
+import { TerminalError } from '../../Errors/ErrorCodes';
 import {
   tokenAddress,
   network,
   faucetAddress,
-} from './config';
-import { ethers } from 'ethers';
+} from '../../config/config';
 import FAUCET_ABI from './ABI/faucet.json';
+
+declare const window: any;
 
 const faucet = async (): Promise<string> => {
   if (!window.ethereum || !window.ethereum!.isMetaMask) {

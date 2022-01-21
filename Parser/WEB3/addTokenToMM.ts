@@ -1,7 +1,8 @@
-declare var window: any;
-import { TerminalError } from '../../../Errors/ErrorCodes';
+import { TerminalError } from '../../Errors/ErrorCodes';
 import { Token } from './API/addToken';
-import { network } from './config';
+import { network } from '../../config/config';
+
+declare const window: any;
 
 async function addToken (token: Token): Promise<void> {
   if (!window.ethereum || !window.ethereum!.isMetaMask) {

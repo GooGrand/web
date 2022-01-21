@@ -1,4 +1,4 @@
-import { stakingAddress, tokenAddress } from '../config';
+import { stakingAddress, tokenAddress } from '../../../config/config';
 
 export type Token = {
   address: string,
